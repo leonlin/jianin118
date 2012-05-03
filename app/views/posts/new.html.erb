@@ -1,0 +1,27 @@
+<%= provide(:title, 'New Post') %>
+<div class="span9">
+  <h1>Compose New Post</h1>
+  <%= form_for(@post) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :content %>
+    <div id="editor-button-bar"></div>
+    <%= f.text_area :content, placeholder: "Compose new post..." %>
+
+    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+      new WMDEditor({
+        input: "post_content",
+        button_bar: "editor-button-bar",
+        helpLink: "http://daringfireball.net/projects/markdown/syntax"
+      });
+    })
+
+</script>

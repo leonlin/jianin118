@@ -1,0 +1,26 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span3">
+  <section>
+  <h1>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+  </h1>
+  </section>
+  <% if current_user? @user %>
+  <section>
+  <%= link_to "New Post", new_post_path,
+    class: "btn btn-large btn-primary" %>
+  </section>
+  <% end %>
+  </aside>
+  <div class="span9">
+    <% if @user.posts.any? %>
+      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
+</div>

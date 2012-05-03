@@ -1,0 +1,18 @@
+<li id="<%= feed_item.id %>">
+<%= link_to gravatar_for(feed_item.user), feed_item.user %>
+<span class="user">
+  <%= link_to feed_item.user.name, feed_item.user %>
+</span>
+<div class="summay">
+<h3 class="title"><%= link_to feed_item.title, post_path(feed_item)  %></h3>
+<span class="timestamp">
+  Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+</span>
+</div>
+<% if current_user?(feed_item.user) %>
+  <%= link_to "delete", feed_item, method:  :delete,
+    confirm: "You sure?",
+    title:   feed_item.title %>
+  <%= link_to "edit", edit_post_path(feed_item) %>
+<% end %>
+</li>
