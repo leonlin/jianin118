@@ -1,0 +1,43 @@
+<div id="new-comment-form" >
+  <h4>Create your comment</h4>
+<%= form_for @comment, url: post_comments_path(@post), remote: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.label :content %>
+  <div id="editor-button-bar"></div>
+  <%= f.text_area :content, placeholder: "Compose new comment..." %>
+  <div id="editor-preview"></div>
+
+  <%= f.submit "Comment", class: "post-button" %>
+<% end %>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $('#comment_content').keydown(function(){
+      $(this).stopTime();
+      $(this).oneTime(1000, function(){ styleCode(); });
+    });
+  });
+  function styleCode(){
+    $("#editor-preview code").addClass("prettyprint");
+    prettyPrint();
+  }
+  $(function(){
+    new WMDEditor({
+      input: "comment_content",
+      button_bar: "editor-button-bar",
+      preview: "editor-preview",
+      helpLink: "http://daringfireball.net/projects/markdown/syntax"
+    });
+  })
+</script>

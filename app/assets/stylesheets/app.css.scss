@@ -1,0 +1,179 @@
+a{
+  text-decoration: none;
+  color: #5C5B5C;
+}
+a:hover{
+  color: #8C8B8C;
+}
+
+ol{
+  padding: 0;
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+#title{
+  color: black;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  width: 900px;
+  padding: 0px;
+  margin: 20px 0px 35px 0px;
+}
+
+.container{
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  top: 80px;
+  left: 260px;
+  line-height: 1.5em;
+  position: absolute;
+  visibility: visible;
+  display: block;
+}
+
+.menu{
+  width: 100%;
+}
+
+.menu ul{
+  margin:0;
+  padding-top:10px;
+  margin-bottom: 20px;
+}
+
+.menu ul li{
+  display: inline;
+  padding: 15px 10px;
+  font-weight: bold;
+}
+
+.menu ul .current{
+  color: #232323;
+  font-size: 130%;
+}
+
+.posts{
+  list-style-type: none;
+  margin-left: 13px;
+}
+
+ul, ol{
+  list-style-type: none;
+}
+.post-info{
+  color: #9c9b9c;
+  font-size: 0.8em;
+}
+
+.feed-title{
+  margin: 0 0 20px 0;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.feed-title a{
+  color: #101010;
+}
+
+.feed-title a:hover{
+  color: #1c1b6c;
+}
+
+.timestamp{
+  margin-right: 10px;
+}
+
+form{
+  margin: 30px 0 0 5px;
+  width: 700px;
+}
+
+label{
+  display: block;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  color: #131313;
+  font-size: 120%;
+}
+
+input, textarea{
+}
+
+pre{
+  //border: 1px solid #BBB;
+  background: #EEEEEE;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  padding: 3px 5px;
+  //display: inline-block;
+  margin: 3px 5px;
+  display: block;
+  width: auto;
+}
+
+code{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-size: 90%;
+}
+
+.main-content{
+  width: 800px;
+  display: block;
+}
+
+.comment-info{
+  color: #9c9b9c;
+  font-size: 0.8em;
+}
+
+.comment-info .comment-name{
+  color: #101010;
+  font-size: 120%;
+}
+.comment-info .comment-name a{
+  color: #3C3B3C;
+}
+.comment-info .comment-name a:hover{
+  color: #1C1B6C;
+}
+
+.flash-info{
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+  padding: 8px 15px;
+}
+
+#error_explanation ul{
+  margin: 10px;
+}
+
+#error_explanation{
+  color: Red;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.flash-error{
+  color: #B94A48;
+}
+
+.flash-success{
+  color: #468847;
+}
+
+blockquote{
+  padding: 0 0 0 15px;
+  margin: 0 0 18px;
+  border-left: 5px solid #EEE;
+}
+.footer{
+  min-height: 100px;
+  display: block;
+  margin-top: 50px;
+  border-top: 1px solid #CCC;
+  
+}

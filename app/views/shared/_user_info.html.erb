@@ -1,12 +1,12 @@
+<div id="blog-title"><%= user.blog_title %></div>
+<div class="person-info">
 <a href="<%= user_path(user) %>">
-  <%= gravatar_for user, size: 52 %>
+  <%= gravatar_for user, size: 40 %>
 </a>
-<h1>
-  <%= user.name %>
-</h1>
 <span>
-  <%= link_to "view profile", user %>
+  <%= link_to user.name, user %>
 </span>
 <span>
   <%= pluralize(user.posts.count, "post") %>
 </span>
+</div>

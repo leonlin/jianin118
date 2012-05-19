@@ -1,16 +1,32 @@
-<% provide(:title, @post.title) %>
-<div class="span9">
-  <h3 class="title">
-    <%= link_to @post.title, post_path(@post)%>
-  </h3>
-<span class="timestamp">
-  Posted <%= time_ago_in_words(@post.created_at) %> ago.
-</span>
-<% if current_user?(@post.user) %>
-  <%= link_to "delete", @post, method:  :delete,
-    confirm: "You sure?",
-    title:   @post.title %>
-  <%= link_to "edit", edit_post_path(@post) %>
-<% end %>
-<div class="content"><%= markdown(@post.content.html_safe) %></div>
+<% provide(:title, 'Home') %>
+<div class="main-content">
+  <div class="menu">
+    <ul>
+      <li class="menu-item"><%= link_to "Posts", root_path %></li>
+      <li class="menu-item"><%= link_to "About", about_path %></li>
+      <% if signed_in? %>
+        <li class="menu-item"><%= link_to "New", new_post_path %></li>
+        <li class="menu-item"><%= link_to "Signout", signout_path, method: 'delete'  %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="post">
+    <h3 class="feed-title">
+      <%= @post.title%>
+    </h3>
+    <div class="post-info">
+    <span class="timestamp">
+      <%= @post.created_at.to_date.to_formatted_s :rfc822 %>
+    </span>
+    <% if current_user?(@post.user) %>
+      <%= link_to "delete", @post, method:  :delete,
+        confirm: "You sure?",
+        title:   @post.title %>
+      <%= link_to "edit", edit_post_path(@post) %>
+    <% end %>
+    </div>
+    <div class="content"><%= markdown(@post.content.html_safe) %></div>
+  </div>
+  <%= render 'comments' %>
+  <%= render 'new_comment' %>
 </div>

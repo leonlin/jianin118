@@ -1,0 +1,24 @@
+<li id="<%= comment_item.id %>">
+<div class="comment-info">
+  <span class="comment-name">
+    <% if comment_item.url != "" %>
+      <%= link_to comment_item.name, url_with_protocol(comment_item.url) %>
+    <% else %>
+      <%= comment_item.name %>
+    <% end %>
+
+  </span>
+
+  <span class="timestamp">
+    <%= time_ago_in_words(comment_item.created_at) %> ago.
+  </span>
+  <span>
+    <% if signed_in? %>
+      <%= comment_item.email %>
+    <% end %>
+  </span>
+
+</div>
+<div class="comment-content"><%= markdown(comment_item.content.html_safe) %></div>
+
+</li>
