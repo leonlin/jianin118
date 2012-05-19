@@ -32,9 +32,6 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bluecloth (2.2.0)
-    bootstrap-sass (2.0.0)
-    bootstrap-will_paginate (0.0.7)
-      will_paginate
     builder (3.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -121,8 +118,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
-  bootstrap-sass (= 2.0.0)
-  bootstrap-will_paginate
   coffee-rails (~> 3.2.1)
   formatize
   friendly_id

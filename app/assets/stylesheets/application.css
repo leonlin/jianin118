@@ -10,5 +10,5 @@
  *
  *= require_self
  *= require google-code-prettify-rails/prettify
- *= require_tree .
+ *= require app
 */

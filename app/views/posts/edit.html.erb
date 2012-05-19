@@ -1,8 +1,16 @@
 <%= provide(:title, 'Edit Post') %>
+<div class="menu">
+  <ul>
+    <li class="menu-item"><%= link_to "Posts", root_path %></li>
+    <li class="menu-item"><%= link_to "About", about_path %></li>
+    <% if signed_in? %>
+      <li class="menu-item"><%= link_to "New", new_post_path %></li>
+      <li class="menu-item"><%= link_to "Signout", signout_path, method: 'delete' %></li>
+    <% end %>
+  </ul>
+</div>
 
-
-<div class="span9">
-  <h1>Edit Post</h1>
+<div id="post-edit-form">
   <%= form_for(@post) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
@@ -11,19 +19,29 @@
 
     <%= f.label :content %>
     <div id="editor-button-bar"></div>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, placeholder: "Compose new post..." %>
+    <div id="editor-preview"></div>
 
-    <%= f.submit "Edit", class: "btn btn-large btn-primary" %>
+    <%= f.submit "Edit", class: "post-button" %>
   <% end %>
 </div>
-
 <script type="text/javascript">
+  $(function() {
+    $('#post_content').keydown(function(){
+      $(this).stopTime();
+      $(this).oneTime(1000, function(){ styleCode(); });
+    });
+  });
+  function styleCode(){
+    $("#editor-preview code").addClass("prettyprint");
+    prettyPrint();
+  }
   $(function(){
-      new WMDEditor({
-        input: "post_content",
-        button_bar: "editor-button-bar",
-        helpLink: "http://daringfireball.net/projects/markdown/syntax"
-      }); 
-    })  
-
+    new WMDEditor({
+      input: "post_content",
+      button_bar: "editor-button-bar",
+      preview: "editor-preview",
+      helpLink: "http://daringfireball.net/projects/markdown/syntax"
+    });
+  })
 </script>

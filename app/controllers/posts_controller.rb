@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comment.paginate(page: params[:page])
+    @comment = Comment.new
   end
 
   def new
@@ -14,7 +16,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(params[:post])
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to current_user
+      redirect_to root_path
     else
       @feed_items = []
       render 'new'
@@ -34,7 +36,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       flash[:success] = "Post updated"
-      redirect_to current_user
+      redirect_to root_path
     else
       render 'edit'
     end

@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :blog_title, :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :posts, dependent: :destroy
+  before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
   validates :name,  presence: true, length: { maximum: 50 }
+  validates :blog_title,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }

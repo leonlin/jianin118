@@ -1,0 +1,90 @@
+/*
+ *= require editor
+ */
+.post
+{
+  margin-left: 5px;
+}
+
+#post-edit-form
+{
+  margin: 30px 0 0 15px;
+  width: 700px;
+}
+
+input, textarea{
+  padding: 6px;
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+
+label{
+  display: block;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  color: #131313;
+  font-size: 120%;
+}
+
+#editor-button-bar{
+  border: 1px solid #DDD;
+  width: 100%;
+  padding: 0 1px 0 10px;
+  cursor: pointer;
+}
+
+.post-button {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 130%;
+  font-weight: bold;
+  border: 1px solid #888;
+  padding: 3px;
+  margin: 5px;
+  cursor: pointer;
+  width: 150px;
+}
+
+#editor-preview{
+  border: 1px solid #CCC;
+  margin-bottom: 15px;
+  padding: 6px;
+  width: 100%;
+}
+
+#comment-panel{
+  border-top: 1px solid #CCC;
+  display: block;
+  margin: 15px 5px;
+}
+
+#comment-panel h4{
+  font-weight: normal;
+  font-size: 18px;
+  margin-bottom: 12px;
+  margin-left: 8px;
+}
+#comment-panel li p{
+  margin: 8px 0;
+}
+#new-comment-form{
+  border-top: 1px solid #CCC;
+  margin-left: 10px;
+}
+#new-comment-form form{
+  width: 600px;
+  margin-top: 10px;
+}
+#new-comment-form form label{
+  font-size: 100%;
+}
+#new-comment-form form input{
+  padding: 2px;
+}
+
+#new-comment-form h4{
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 7px;
+  line-height: 1.3;
+}
