@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
+<<<<<<< HEAD
     require 'will_paginate/array'
+=======
+>>>>>>> development
     @feed_items = Post.all.paginate(page: params[:page])
   end
 

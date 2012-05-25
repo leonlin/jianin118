@@ -106,12 +106,18 @@ input, textarea{
 
 pre{
   //border: 1px solid #BBB;
-  background: #FFFFEE;
+  background: #EEEEEE;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   padding: 3px 5px;
   //display: inline-block;
   margin: 3px 5px;
   display: block;
   width: auto;
+}
+
+code{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-size: 90%;
 }
 
 .main-content{
@@ -163,4 +169,11 @@ blockquote{
   padding: 0 0 0 15px;
   margin: 0 0 18px;
   border-left: 5px solid #EEE;
+}
+.footer{
+  min-height: 100px;
+  display: block;
+  margin-top: 50px;
+  border-top: 1px solid #CCC;
+  
 }
