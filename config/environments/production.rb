@@ -47,6 +47,8 @@ KykBlog::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( posts.css static_pages.css sessions.css comments.css users.css )
+  config.assets.precompile += %w( posts.js static_pages.js sessions.js comments.js users.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
