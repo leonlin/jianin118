@@ -6,6 +6,7 @@
     <%= stylesheet_link_tag params[:controller], media: 'all' %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag params[:controller] %>
+    <%= javascript_include_tag "http://api.recaptcha.net/js/recaptcha_ajax.js" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <%= render 'layouts/google_analytics' %>

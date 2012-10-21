@@ -9,6 +9,7 @@ gem "friendly_id"
 gem 'wmd-rails'
 gem 'formatize'
 gem 'google-code-prettify-rails'
+gem "recaptcha", :require => "recaptcha/rails"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

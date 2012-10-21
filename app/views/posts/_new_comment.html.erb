@@ -16,6 +16,7 @@
   <div id="editor-button-bar"></div>
   <%= f.text_area :content, placeholder: "Compose new comment..." %>
   <div id="editor-preview"></div>
+  <%= recaptcha_tags ajax:true %>
 
   <%= f.submit "Comment", class: "post-button" %>
 <% end %>
