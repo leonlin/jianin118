@@ -10,4 +10,7 @@ class Post < ActiveRecord::Base
   def comment
     Comment.where("post_id = ?", id)
   end
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
 end
