@@ -4,10 +4,10 @@
   <%= feed_item.created_at.to_date.to_formatted_s :rfc822 %>
 </span>
 <% if current_user?(feed_item.user) %>
+  <%= link_to "edit", edit_post_path(feed_item) %>
   <%= link_to "delete", feed_item, method:  :delete,
     confirm: "You sure?",
     title:   feed_item.title %>
-  <%= link_to "edit", edit_post_path(feed_item) %>
 <% end %>
 </div>
 <h3 class="feed-title"><%= link_to feed_item.title, post_path(feed_item)  %></h3>

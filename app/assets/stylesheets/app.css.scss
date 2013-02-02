@@ -21,30 +21,48 @@ ul{
   color: black;
   font-style: normal;
   font-weight: 500;
-  font-size: 62px;
-  width: 900px;
-  padding: 0px;
-  margin: 20px 0px 35px 0px;
+  font-size: 58px;
+  width: 750px;
+  padding-top: 50px;
+  padding-bottom:15px;
+  position:fixed;
+  display: block;
+  background: #f7f7f7;
+  z-index: 1;
+}
+
+body{
+  margin-top: 0px;
+  background: #f7f7f7;
 }
 
 .container{
-  font-family: Helvetica, Arial, Verdana, sans-serif;
-  top: 80px;
-  left: 260px;
+  width:748px;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  //font-family: Helvetica, Arial, Verdana, sans-serif;
+
+  //left: 260px;
+  margin: 0 auto;
+  position: relative;
   line-height: 1.5em;
-  position: absolute;
+  //position: absolute;
   visibility: visible;
   display: block;
 }
 
 .menu{
-  width: 100%;
+  z-index: 1;
+  width: 750px;
+  position:fixed;
+  display: block;
+  background: #f7f7f7;
+  top:80px;
 }
 
 .menu ul{
   margin:0;
   padding-top:10px;
-  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
 }
 
 .menu ul li{
@@ -55,21 +73,37 @@ ul{
 
 .menu ul .current{
   color: #232323;
-  font-size: 130%;
 }
 
 .posts{
+  padding-top: 138px;
   list-style-type: none;
-  margin-left: 13px;
+  padding-left: 13px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  background: white;
+  box-shadow: 1px 1px 3px #ddd;
+  -webkit-box-shadow: 1px 1px 3px #ddd;
 }
 
 ul, ol{
   list-style-type: none;
 }
 .post-info{
+  display: block;
   color: #9c9b9c;
   font-size: 0.8em;
 }
+.post-info a {
+  padding: 0em 0.3em;
+  color: #333;
+  border:solid 1px #8C8B8C;
+  text-decoration: none; }
+.post-info a:hover, .post-info a:focus {
+  padding: 0em 0.3em;
+  border:solid 1px black;
+  color: black; }
+
 
 .feed-title{
   margin: 0 0 20px 0;
@@ -78,11 +112,11 @@ ul, ol{
 }
 
 .feed-title a{
-  color: #101010;
+  color: #333;
 }
 
 .feed-title a:hover{
-  color: #1c1b6c;
+  color: black;
 }
 
 .timestamp{
@@ -90,7 +124,6 @@ ul, ol{
 }
 
 form{
-  margin: 30px 0 0 5px;
   width: 700px;
 }
 
@@ -106,11 +139,12 @@ input, textarea{
 }
 
 pre{
-  //border: 1px solid #BBB;
+  border: 1px solid #BBB;
   background: #EEEEEE;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   padding: 3px 5px;
   //display: inline-block;
+  overflow: auto;
   margin: 3px 5px;
   display: block;
   width: auto;
@@ -122,7 +156,6 @@ code{
 }
 
 .main-content{
-  width: 800px;
   display: block;
 }
 
@@ -174,7 +207,34 @@ blockquote{
 .footer{
   min-height: 100px;
   display: block;
-  margin-top: 50px;
-  border-top: 1px solid #CCC;
+  margin-top: 5px;
+  //border-top: 1px solid #CCC;
   
 }
+
+.pagination {
+  text-align: right;
+  padding: 0.3em;
+  cursor: default; }
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.2em 0.5em; }
+  .pagination .disabled {
+    color: #aaaaaa; }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: black; }
+  .pagination a {
+    color: #333;
+    border:solid 1px #8C8B8C;
+    text-decoration: none; }
+    .pagination a:hover, .pagination a:focus {
+      border:solid 1px black;
+      color: black; }
+  .pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .pagination .previous_page {
+    margin-right: 0em; }
+  .pagination .next_page {
+    margin-left: 0em; }

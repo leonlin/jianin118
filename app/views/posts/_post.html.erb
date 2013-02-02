@@ -6,10 +6,10 @@
   Posted <%= time_ago_in_words(post.created_at) %> ago.
 </span>
 <% if current_user?(post.user) %>
+  <%= link_to "edit", edit_post_path(post) %>
   <%= link_to "delete", post, method:  :delete,
     confirm: "You sure?",
     title:   post.title %>
-  <%= link_to "edit", edit_post_path(post) %>
 <% end %>
 <div class="content"><%= markdown(post.content.html_safe) %></div>
 </li>

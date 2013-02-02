@@ -11,18 +11,16 @@
     </ul>
   </div>
   <div class="post">
-    <h3 class="feed-title">
+    <h3 class="feed-title-inside">
       <%= @post.title%>
     </h3>
-    <div class="post-info">
-    <span class="timestamp">
-      <%= @post.created_at.to_date.to_formatted_s :rfc822 %>
-    </span>
+    <div class="post-info-inside">
     <% if current_user?(@post.user) %>
+      <%= link_to "edit", edit_post_path(@post) %>
       <%= link_to "delete", @post, method:  :delete,
         confirm: "You sure?",
         title:   @post.title %>
-      <%= link_to "edit", edit_post_path(@post) %>
+    </div>
     <% end %>
     </div>
     <div class="content"><%= markdown(@post.content.html_safe) %></div>

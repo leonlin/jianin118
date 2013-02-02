@@ -9,14 +9,11 @@
   <%= f.label :email %>
   <%= f.text_field :email %>
 
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-
   <%= f.label :content %>
   <div id="editor-button-bar"></div>
   <%= f.text_area :content, placeholder: "Compose new comment..." %>
   <div id="editor-preview"></div>
-  <%= recaptcha_tags ajax:true %>
+  <%= recaptcha_tags ajax:true, display:{theme:'clean'}%>
 
   <%= f.submit "Comment", class: "post-button" %>
 <% end %>

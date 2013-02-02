@@ -9,6 +9,7 @@
     <% end %>
   </ul>
 </div>
+<div class="signin">
 <%= form_for(:session, url: sessions_path) do |f| %>
 
   <%= f.label :email %>
@@ -19,3 +20,4 @@
 
   <%= f.submit "Sign in", class: "form-button" %>
 <% end %>
+</div>

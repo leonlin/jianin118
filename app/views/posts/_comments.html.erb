@@ -1,7 +1,7 @@
 <div id="comment-panel">
 <h4 id="comments_count">Comments(<%= @comments.count %>)</h4>
 <% if @comments.any? %>
-  <ol class="posts" id="comments">
+  <ol class="comments" id="comments">
     <%= render partial: 'comment_item', collection: @comments %>
   </ol>
   <%= will_paginate @comments %>
