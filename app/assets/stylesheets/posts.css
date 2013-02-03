@@ -15,6 +15,10 @@
   -webkit-box-shadow: 1px 1px 3px #ddd;
 }
 
+.content img{
+  max-width:600px;
+}
+
 #post-edit-form
 {
   padding-top: 133px;
@@ -61,6 +65,11 @@ label{
   padding: 6px;
   width: 100%;
 }
+
+#editor-preview img{
+  max-width:600px;
+}
+
 
 #comment-panel{
   display: block;
@@ -114,6 +123,10 @@ label{
   background: white;
   box-shadow: 1px 1px 3px #ddd;
   -webkit-box-shadow: 1px 1px 3px #ddd;
+}
+
+.comments img{
+  max-width:600px;
 }
 
 .post-info-inside{
