@@ -6,6 +6,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comment.paginate(page: params[:page])
     @comment = Comment.new
+    if request.path != post_path(@post)
+      redirect_to @post, status: :moved_permanently
+    end
   end
 
   def new
@@ -45,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def correct_user
-    @post = current_user.posts.find_by_id(params[:id])
+    @post = current_user.posts.find(params[:id])
     redirect_to root_path if @post.nil?
   end
 end
